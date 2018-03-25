@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test_index</title>
+  </head>
+  <body>
+    <h1><%= @msg %></h1>
+    <% @post.each do |obj| %>
+    <% if obj.image? %>
+      <%= image_tag obj.image.thumb.url %>
+    <% else %>
+      <%= image_tag 'default.png', :size => "50x50" %>
+    <% end %>
+    <%= obj.title %>
+    <%= obj.text %><br>
+    <% end %>
+    <a href="/post/add">add</a>
+  </body>
+</html>

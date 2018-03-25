@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>add</title>
+  </head>
+  <body>
+    <% @post = Post.new %>
+    <%= form_for @post, :url => {:action => :create} do |f| %>
+      <%= f.label :title, 'title' %>
+      <%= f.text_field :title %>
+      <%= f.label :text, 'text' %>
+      <%= f.text_field :text %>
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+      <%= f.submit 'Add' %>
+    <% end %>
+
+  </body>
+</html>
